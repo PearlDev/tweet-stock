@@ -1,0 +1,105 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *=require font-awesome
+ *= require jquery-ui/draggable
+ *= require jquery-ui/sortable
+ *= require_tree ../../../vendor/assets/stylesheets/.
+ *= require dataTables/jquery.dataTables
+ *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+ *= require devise
+ *= require_tree .
+ *= require_self
+ //= depend_on_asset "bootstrap/glyphicons-halflings-regular.eot"
+ //= depend_on_asset "bootstrap/glyphicons-halflings-regular.woff"
+ //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"
+ //= depend_on_asset "bootstrap/glyphicons-halflings-regular.svg"
+ */
+@import "bootstrap";
+/* Some Style from the Bootstrap Default Theme */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  /*background: #EDEFF0;*/
+}
+
+p {
+  color: #686363;
+}
+
+.container {
+  width: 100%;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+#orders_chart {
+  margin-top: 15px;
+}
+
+#stock_lists_paginate a {
+  font-size: 10px;
+}
+
+.even {
+  background: #F5F5F5 !important;
+}
+
+body > .container {
+  background: white;
+}
+
+/* Overide bootstrap Stuff */
+
+.nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
+  border: none;
+}
+
+.nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
+  border: none;
+  border-radius: 0;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: #FFF;
+  background: none;
+}
+
+.nav-tabs > li > a:hover {
+  border: none;
+}
+
+.nav-tabs > li > a:hover {
+  border-color: #eeeeee #eeeeee #ddd;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background: none;
+}

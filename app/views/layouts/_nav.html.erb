@@ -1,0 +1,59 @@
+<div class="side-nav container">
+  <div class="row">
+    <div class="col col-sm-4">
+      <%= image_tag current_user.image, class: "profile-pic" %>
+    </div>
+    <div>
+      <div><%= link_to current_user.name, root_path %></div>
+      <%= link_to('', destroy_user_session_path, :method => :delete, class: "glyphicon glyphicon-log-out") %>
+      <%= link_to('', edit_user_path(current_user), class: "glyphicon glyphicon-user") %>
+      <div class="row">
+        <%= link_to "view all stocks", stocks_path %> 
+        <span class="pipe">|</span>
+        <%= link_to "forum", forum_threads_path %>
+      </div>
+    </div>
+  </div>
+
+  <%= form_tag "/stocks", method: "get" do %>
+    <%= text_field_tag "q[company_or_symbol_cont]", "", class: "form-control", placeholder: "Stock Symbol e.g.(AAPL)", id:"stock-search", autocomplete: "off" %>
+    <div class='result-dropdown' id='result-dropdown'>
+      <ul>
+      
+      </ul>
+    </div><br>
+  <% end %>
+
+  <h4><i class="fa fa-star-o"></i> Favorite Stocks</h4>
+  <!-- <p class="text-center">Drag to add stock to favorites</p> -->
+
+  <ul id="favorite-stocks" class="favorite-stocks">
+    <% current_user.favorites.each do |favorite| %>
+      <li class='row' data-id="<%= favorite.stock.id %>">
+        <div class="col-sm-10">
+          <i class="fa fa-arrows-v" style="padding-right: 1rem;"></i>
+          <%= link_to "#{truncate(favorite.stock.company, length: 14)}  (#{favorite.stock.symbol})", "#{stocks_path}/#{favorite.stock.symbol}" %>
+        </div>
+        <div class="col-sm-2">
+
+        <%= link_to fa_icon("times"), remove_favorite_path(favorite), method: :delete, data: { confirm: "Are you sure you want to remove this stock from your favorites?" }, class: "remove-stock text-danger pull-right" %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+  <ul id="stock-list">
+    <% current_user.stocks_without_favorites.each do |stock| %>
+      <li class='row' data-id="<%= stock.id %>">
+        <div class="col-sm-10">
+          <i class="fa fa-arrows-v list" style="padding-right: 0.5rem;"></i>
+          <%= link_to "#{truncate(stock.company, length: 14)}  (#{stock.symbol})", "#{stocks_path}/#{stock.symbol}" %>
+        </div>
+        <div class="col-sm-2">
+          <%= link_to fa_icon("times"), stock_path(stock, follow: false), method: :patch, data: { confirm: "Are you sure you want to remove this stock?" }, class: "remove-stock text-danger pull-right" %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+</div>

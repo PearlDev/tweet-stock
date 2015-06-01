@@ -1,0 +1,205 @@
+
+.profile-pic {
+  float: left;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.dashboard {
+  padding-left: 16.666667%;
+  background: #3C3C3C;
+}
+
+.middle.col {
+  padding: 0;
+}
+
+.side-nav.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 120px;
+  background: #177bbb;
+  height: 100%;
+  width: 16.6666666667%;
+  box-shadow: 0 0 3px #000;
+  z-index: 101;
+  overflow: scroll;
+
+  a:focus {
+    color: #fff;
+  }
+
+  > .row:first-child {
+    position: fixed;
+    top: 0;
+    width: inherit;
+    background: #126296;
+    padding: 10px 0;
+    z-index: 102;
+
+    .pipe {
+      color: #E5E5E5;
+    }
+  }
+
+  form {
+    position: fixed;
+    width: 16.6667%;
+    left: 0;
+    top: 80px;
+    z-index: 101;
+  }
+
+  #stock-search {
+    border-radius: 0;
+  }
+
+  .fa-times {
+    color: #d7ecfa;
+  }
+
+  #stock-list, #favorite-stocks {
+    li {
+      display: block;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      .remove-stock {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1em;
+      }
+
+      .fa-arrows-v{
+        color: #126295;
+      }
+      
+      .fa-arrows-v.list {
+        color: #177bbb; 
+      }
+    }
+
+    li:hover .fa-arrows-v {
+      color: #d7ecfa;
+    }
+
+
+    li:hover .remove-stock {
+      display: block;
+    }
+
+    li.ui-sortable-helper {
+      border-bottom: 1px solid #2D2D2D;
+    }
+  }
+
+  #favorite-stocks {
+    min-height: 20px;
+    background-color: #126295;
+
+    li {
+      background-color: #126295;
+    }
+  }
+
+  .glyphicon-star {
+    color: yellow;
+  }
+}
+
+.twitter {
+  overflow-y: scroll;
+}
+
+.follow-stocks-prompt {
+  margin-top: 300px;
+}
+  
+
+
+.orders-chart {
+  height: 500px;
+  border-bottom: 1px solid #aaa;
+}
+
+.progress, .sentiment-table {
+  margin-bottom: 0 !important;
+}
+
+.follow-button {
+  float: right;
+}
+
+.result-dropdown {
+  max-height: 300px;
+  overflow-y: scroll;
+  position: absolute;
+  width: 100%;
+  z-index: 101;
+  background-color: #126296;
+  border-radius: 0;
+  box-shadow: 0 0 3px #000;
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    padding: 10px;
+  }
+
+  li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.table {
+  table-layout: fixed;
+}
+
+.side-nav p {
+  color: #eee;
+}
+
+.side-nav h4 , .side-nav a {
+  color: #ffffff;
+}
+
+
+.side-nav a:hover {
+  color: #ffffff;
+}
+
+
+#stock-list a, #favorite-stocks a {
+  font-size: 12px;
+}
+
+
+.side-nav.container h4 {
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.side-nav div div:nth-child(1) a {
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1px;
+}
+
+
+.progress-bar-success {
+  background: #17bba9 !important;
+}
+
+.progress-bar-danger {
+  background: #FB625E !important;
+}
+
+.btn-danger {
+  background: #FB625E !important;
+}

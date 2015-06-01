@@ -1,0 +1,26 @@
+<% provide(:title, "Stocks") %>
+<br>
+<div class="col-sm-offset-2 col-sm-9" >
+  <table class="table" id="stock_lists">
+
+    <thead>
+      <th>Company</th>
+      <th>Symbol</th>
+      <th>Last Price</th>
+      <th></th>
+    </thead>
+
+    <tbody>
+
+    <% @stocks.each do |stock| %>
+      <tr class="<%= cycle("odd", "even")%>">
+        <td><%= link_to stock.company, "stocks/#{stock.symbol}" %></td>
+        <td><%= stock.symbol %></td>
+        <td><%= number_to_currency(stock.last_price) %></td>
+        <td><%= render_button_for(stock) %></td>
+      </tr>
+      <% end %> 
+    </tbody>
+  </table>
+
+</div>
