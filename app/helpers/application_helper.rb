@@ -9,9 +9,9 @@ module ApplicationHelper
   end
 
   def full_title(page_title = "")
-    base_title = "Stock Overflow"  
-    if page_title.empty?                              
-      base_title                                      
+    base_title = "Tweet Stock"  
+    if page_title.empty?
+      base_title
     else
       "#{page_title} | #{base_title}"
     end
